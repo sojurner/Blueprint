@@ -1,10 +1,9 @@
 // https://github.com/diegohaz/arc/wiki/Atomic-Design
-import React from 'react'
+import React from 'react';
+import Button from '../../atoms/Button';
 
 const HomePage = () => {
-  return (
-    <div>Hello World</div>
-  )
-}
+  return <Button />;
+};
 
-export default HomePage
+export default HomePage;
