@@ -35,12 +35,8 @@ const wpConfig = {
         },
         {
           test: /\.tsx?$/,
-          use: [
-            inProduction && {
-              loader: 'happypack/loader'
-            },
-            'ts-loader'
-          ].filter(Boolean)
+          exclude: /node_modules/,
+          use: ['happypack/loader', 'ts-loader'].filter(Boolean)
         },
         {
           test: /\.(png|jpe?g|svg|woff2?|ttf|eot)$/,
@@ -113,9 +109,26 @@ const wpConfig = {
     optimization: {
       minimizer: [new UglifyJsPlugin()],
       splitChunks: {
-        name: 'vendor',
-        minChunks: 2
-      }
+        chunks: 'all',
+        maxInitialRequests: Infinity,
+        minSize: 0,
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name(module) {
+              // get the name. E.g. node_modules/packageName/not/this/part.js
+              // or node_modules/packageName
+              const packageName = module.context.match(
+                /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+              )[1];
+
+              // npm package names are URL-safe, but some servers don't like @ symbols
+              return `npm.${packageName.replace('@', '')}`;
+            }
+          }
+        }
+      },
+      runtimeChunk: true
     }
   }
 };
