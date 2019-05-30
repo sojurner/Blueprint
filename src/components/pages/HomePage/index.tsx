@@ -1,6 +1,5 @@
 import React from 'react';
-import LystButton from '../../atoms/Button';
-import { css } from '@emotion/core';
+import LystButton from '@atoms/material/Button';
 import { Colors } from '@blueprintjs/core';
 
 // List of Available Icons
@@ -15,13 +14,13 @@ const btnProps = {
 };
 
 const HomePage = () => {
-  const styles = css`
-    background-color: ${Colors.VERMILION5};
-    border: none;
+  const styles = `
+    background-color: ${Colors.DARK_GRAY1};
+    border: 1px solid red;
     color: white;
     fill: white;
   `;
-  return <LystButton styles={styles} {...btnProps} />;
+  return <LystButton css={styles} {...btnProps} />;
 };
 
 export default HomePage;
