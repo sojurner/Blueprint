@@ -2,11 +2,11 @@
 const baseConfig = require('../../webpack.config');
 
 module.exports = storybookBaseConfig => {
-  console.log(baseConfig.module.rules.slice(1));
   const config = Object.assign({}, storybookBaseConfig, {
     resolve: Object.assign({}, storybookBaseConfig.resolve, {
       modules: baseConfig.resolve.modules,
-      extensions: baseConfig.resolve.extensions
+      extensions: baseConfig.resolve.extensions,
+      alias: baseConfig.resolve.alias
     }),
     module: {
       rules: [

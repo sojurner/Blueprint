@@ -36,7 +36,7 @@ const wpConfig = {
         {
           test: /\.tsx?$/,
           exclude: /node_modules/,
-          use: ['happypack/loader', 'ts-loader'].filter(Boolean)
+          use: ['happypack/loader', 'awesome-typescript-loader'].filter(Boolean)
         },
         {
           test: /\.(png|jpe?g|svg|woff2?|ttf|eot)$/,
@@ -64,7 +64,14 @@ const wpConfig = {
     ],
     resolve: {
       extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
-      modules: [].concat(sourceDir, ['node_modules'])
+      modules: [].concat(sourceDir, ['node_modules']),
+      alias: {
+        '@atoms': path.resolve(__dirname, './src/components/atoms'),
+        '@molecules': path.resolve(__dirname, './src/components/molecules'),
+        '@pages': path.resolve(__dirname, './src/components/pages'),
+        '@atomic': path.resolve(__dirname, './src'),
+        '@factories': path.resolve(__dirname, './src/factories')
+      }
     },
     entry: {
       app: [sourcePath]
