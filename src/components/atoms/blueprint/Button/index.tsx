@@ -6,7 +6,7 @@ const LystButton: React.FunctionComponent<any> = ({
   styles,
   ...props
 }): React.ReactElement => {
-  return <Button css={styles.styles} {...props} />;
+  return <Button css={...styles} {...props} />;
 };
 
 LystButton.defaultProps = {
