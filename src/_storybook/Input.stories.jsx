@@ -1,7 +1,7 @@
 // https://github.com/diegohaz/arc/wiki/Storybook
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import LystInput from '@atoms/material/Input';
+import LystInput from '@atoms/Input';
 
 import { select, boolean, text } from '@storybook/addon-knobs/react';
 
@@ -18,10 +18,20 @@ storiesOf('Input', module).addWithJSX('Material', () => (
       label: text('label', 'Label', 'Props'),
       require: boolean('required', true, 'Props')
     }}
-    styles={`
+    styles={`${text(
+      'styles',
+      `
       & label {
-        opacity: ${text('Label Opacity', '.5', 'Styles')};
+        opacity: .5;
       }
-    `}
+      & input {
+      background: #f7f7f7;
+      &:focus {
+        background: white;
+      }
+    }
+    `,
+      'Styles'
+    )}`}
   />
 ));
