@@ -1,32 +1,32 @@
 // https://github.com/diegohaz/arc/wiki/Storybook
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import ThemeWrapper from '@templates/material/ThemeWrapper';
 import LystInput from '@atoms/material/Input';
-import { select } from '@storybook/addon-knobs/react';
 
-const colorSelection = {
-  orange: 'orange',
-  blue: 'blue',
-  green: 'green',
-  yellow: 'yellow',
-  pink: 'pink',
-  purple: 'purple',
-  indigo: 'indigo',
-  deepPurple: 'deepPurple',
-  lightBlue: 'lightBlue',
-  cyan: 'cyan',
-  teal: 'teal',
-  lightGreen: 'lightGreen',
-  lime: 'lime',
-  amber: 'amber',
-  deepOrange: 'deepOrange'
+import { select, boolean, text } from '@storybook/addon-knobs/react';
+
+const variantSelection = {
+  outlined: 'outlined',
+  filled: 'filled',
+  standard: 'standard'
 };
 
 storiesOf('Input', module).addWithJSX('Material', () => (
-  <ThemeWrapper
-    color={select('Select A Color', colorSelection, 'orange', 'color')}
-  >
-    <LystInput />
-  </ThemeWrapper>
+  <LystInput
+    inputProps={{
+      variant: select(
+        'Select variant',
+        variantSelection,
+        'outlined',
+        'variant'
+      ),
+      label: text('Enter Label', 'Label', 'Label'),
+      require: boolean('required', true, 'Required')
+    }}
+    styles={`
+      & label {
+        opacity: .5;
+      }
+    `}
+  />
 ));
