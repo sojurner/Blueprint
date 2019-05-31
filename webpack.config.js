@@ -35,12 +35,8 @@ const wpConfig = {
         },
         {
           test: /\.tsx?$/,
-          use: [
-            inProduction && {
-              loader: 'happypack/loader'
-            },
-            'ts-loader'
-          ].filter(Boolean)
+          exclude: /node_modules/,
+          use: ['happypack/loader', 'awesome-typescript-loader'].filter(Boolean)
         },
         {
           test: /\.(png|jpe?g|svg|woff2?|ttf|eot)$/,
@@ -68,7 +64,14 @@ const wpConfig = {
     ],
     resolve: {
       extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
-      modules: [].concat(sourceDir, ['node_modules'])
+      modules: [].concat(sourceDir, ['node_modules']),
+      alias: {
+        '@atoms': path.resolve(__dirname, './src/components/atoms'),
+        '@molecules': path.resolve(__dirname, './src/components/molecules'),
+        '@pages': path.resolve(__dirname, './src/components/pages'),
+        '@atomic': path.resolve(__dirname, './src'),
+        '@factories': path.resolve(__dirname, './src/factories')
+      }
     },
     entry: {
       app: [sourcePath]
@@ -113,9 +116,26 @@ const wpConfig = {
     optimization: {
       minimizer: [new UglifyJsPlugin()],
       splitChunks: {
-        name: 'vendor',
-        minChunks: 2
-      }
+        chunks: 'all',
+        maxInitialRequests: Infinity,
+        minSize: 0,
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name(module) {
+              // get the name. E.g. node_modules/packageName/not/this/part.js
+              // or node_modules/packageName
+              const packageName = module.context.match(
+                /[\\/]node_modules[\\/](.*?)([\\/]|$)/
+              )[1];
+
+              // npm package names are URL-safe, but some servers don't like @ symbols
+              return `npm.${packageName.replace('@', '')}`;
+            }
+          }
+        }
+      },
+      runtimeChunk: true
     }
   }
 };
