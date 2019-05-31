@@ -14,18 +14,13 @@ const variantSelection = {
 storiesOf('Input', module).addWithJSX('Material', () => (
   <LystInput
     inputProps={{
-      variant: select(
-        'Select variant',
-        variantSelection,
-        'outlined',
-        'variant'
-      ),
-      label: text('Enter Label', 'Label', 'Label'),
-      require: boolean('required', true, 'Required')
+      variant: select('variant', variantSelection, 'outlined', 'Props'),
+      label: text('label', 'Label', 'Props'),
+      require: boolean('required', true, 'Props')
     }}
     styles={`
       & label {
-        opacity: .5;
+        opacity: ${text('Label Opacity', '.5', 'Styles')};
       }
     `}
   />
