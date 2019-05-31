@@ -1,5 +1,5 @@
 import React from 'react';
-import LystButton from '@atoms/material/Button';
+import LystButton from '@atoms/Button';
 import { ThemeProvider } from '@material-ui/styles';
 import themeGenerator from '@factories/themeFactory';
 

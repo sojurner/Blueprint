@@ -3,7 +3,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 // eslint-disable-next-line import/no-unresolved
-import LystButton from '@atoms/material/Button';
+import LystButton from '@atoms/Button';
 import { text } from '@storybook/addon-knobs/react';
 
 storiesOf('Button', module).addWithJSX('Material', () => (
@@ -11,7 +11,7 @@ storiesOf('Button', module).addWithJSX('Material', () => (
     styles={`
         background: ${text(
           'background',
-          'linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%)',
+          'linear-gradient(45deg,#83ceff 30%,#00abab 90%);',
           'Styles'
         )};
         border-radius: ${text('border-radius', '3px', 'Styles')};
@@ -20,7 +20,7 @@ storiesOf('Button', module).addWithJSX('Material', () => (
         height: ${text('height', '48px', 'Styles')};
         padding: ${text('padding', '0 30px', 'Styles')};
         margin: ${text('margin', '1rem', 'Styles')}
-        box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
+        box-shadow: 0 3px 10px 3px  #87ceeba1;;
       `}
   />
 ));

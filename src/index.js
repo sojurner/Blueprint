@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { basename } from 'config';
 import App from 'components/App';
-import '@blueprintjs/core/lib/css/blueprint.css';
 
 const renderApp = () => (
   <BrowserRouter basename={basename}>

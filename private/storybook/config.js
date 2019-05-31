@@ -3,7 +3,7 @@ import { configure, setAddon, addDecorator } from '@storybook/react';
 import JSXAddon from 'storybook-addon-jsx';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs';
-import ThemeWrapper from '@templates/material/ThemeWrapper';
+import ThemeWrapper from '@templates/ThemeWrapper';
 import { select } from '@storybook/addon-knobs/react';
 
 import { StylesProvider } from '@material-ui/styles';
