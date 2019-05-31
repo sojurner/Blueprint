@@ -1,16 +1,7 @@
 import React from 'react';
+import LystButton from '@atoms/material/Button';
 import { ThemeProvider } from '@material-ui/styles';
 import themeGenerator from '@factories/themeFactory';
-// List of Available Icons
-//  '@blueprintjs/icons/src/generated/iconNames.ts'
-
-// const btnProps = {
-//   icon: 'key-enter',
-//   intent: 'none',
-//   text: 'Enter',
-//   alignText: 'center',
-//   large: true
-// };
 
 const ThemeWrapper: React.FunctionComponent<{
   color: string;
@@ -25,6 +16,11 @@ const ThemeWrapper: React.FunctionComponent<{
   }, [color]);
 
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+};
+
+ThemeWrapper.defaultProps = {
+  color: 'orange',
+  children: LystButton
 };
 
 export default ThemeWrapper;

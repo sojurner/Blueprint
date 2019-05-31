@@ -70,6 +70,7 @@ const wpConfig = {
         '@molecules': path.resolve(__dirname, './src/components/molecules'),
         '@pages': path.resolve(__dirname, './src/components/pages'),
         '@atomic': path.resolve(__dirname, './src'),
+        '@templates': path.resolve(__dirname, './src/components/templates'),
         '@factories': path.resolve(__dirname, './src/factories')
       }
     },
