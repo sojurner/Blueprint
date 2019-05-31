@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const styledElement = (element: any, styles: string) => {
+const styledElement = (element: any, styles: string = '') => {
   return styled(element)`
     ${styles}
   `;

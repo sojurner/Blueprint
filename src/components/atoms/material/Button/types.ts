@@ -1,3 +1,3 @@
 export interface IButtonProps {
-  css: string;
+  styles?: string;
 }

@@ -3,9 +3,12 @@ import Button from '@material-ui/core/Button';
 import { IButtonProps } from './types';
 import styleFactory from '@factories/styleFactory';
 
-const MButton: React.FunctionComponent<IButtonProps> = ({ css, ...props }) => {
-  const StyledButton = styleFactory(Button, css);
-  return <StyledButton {...props}>Catalyst</StyledButton>;
+const LystButton: React.FunctionComponent<IButtonProps> = ({
+  styles,
+  ...props
+}) => {
+  const StyledButton = styleFactory(Button, styles);
+  return <StyledButton color={'primary'}>Catalyst</StyledButton>;
 };
 
-export default MButton;
+export default LystButton;

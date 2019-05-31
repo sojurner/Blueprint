@@ -18,6 +18,7 @@
       "@atoms/*": ["components/atoms/*"],
       "@molecules/*": ["components/molecules/*"],
       "@pages/*": ["components/pages/*"],
+      "@templates/*": ["components/templates/*"],
       "@factories/*": ["factories/*"]
     },
     "removeComments": true,
