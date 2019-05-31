@@ -7,7 +7,6 @@ const LystButton: React.FunctionComponent<IButtonProps> = ({
   styles,
   ...props
 }) => {
-  // css ? (css = css) : (css = '');
   const StyledButton = styleFactory(Button, styles);
   return <StyledButton color={'primary'}>Catalyst</StyledButton>;
 };
