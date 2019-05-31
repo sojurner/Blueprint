@@ -56,7 +56,7 @@ addDecorator(
 );
 addDecorator(withKnobs);
 setAddon(JSXAddon);
-const req = require.context('../../src/storybook', true, /.stories.jsx$/);
+const req = require.context('../../src/_storybook', true, /.stories.jsx$/);
 
 function loadStories() {
   req.keys().forEach(file => req(file));
