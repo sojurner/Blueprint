@@ -1,33 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import SearchIconDemo from '@pages/SearchIconDemo';
-import ThemeWrapper from '@templates/ThemeWrapper';
 import { select } from '@storybook/addon-knobs/react';
 
-import { StylesProvider } from '@material-ui/styles';
-
-const colorSelection = {
-  orange: 'orange',
-  blue: 'blue',
-  green: 'green',
-  yellow: 'yellow',
-  pink: 'pink',
-  purple: 'purple',
-  indigo: 'indigo',
-  deepPurple: 'deepPurple',
-  lightBlue: 'lightBlue',
-  cyan: 'cyan',
-  teal: 'teal',
-  lightGreen: 'lightGreen',
-  lime: 'lime',
-  amber: 'amber',
-  deepOrange: 'deepOrange'
+const variantSelection = {
+  rounded: 'Rounded',
+  twoTone: 'TwoTone',
+  sharp: 'Sharp',
+  outlined: 'Outlined'
 };
 
-storiesOf('Icon', module).addWithJSX('Material Icons', () => (
-  <ThemeWrapper color={select('Color', colorSelection, 'orange', 'Theme')}>
-    <StylesProvider injectFirst>
-      <SearchIconDemo />
-    </StylesProvider>
-  </ThemeWrapper>
+storiesOf('Icon List', module).addWithJSX('Material Icons', () => (
+  <SearchIconDemo
+    iconVariant={select('Icon Variant', variantSelection, 'Outlined', 'Props')}
+  />
 ));
