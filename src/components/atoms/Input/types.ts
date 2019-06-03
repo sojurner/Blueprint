@@ -1,4 +1,4 @@
 export interface IInputProps {
-  inputProps: {};
-  styles: string;
+  inputProps: any;
+  styles?: string;
 }

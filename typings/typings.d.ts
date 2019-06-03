@@ -14,3 +14,7 @@ declare module '*.json' {
 }
 
 declare module '@emotion/core';
+
+declare module 'react-loadable';
+
+declare module 'color';

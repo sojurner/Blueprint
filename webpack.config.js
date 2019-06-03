@@ -14,8 +14,6 @@ const sourceDir = process.env.SOURCE || 'src';
 const publicPath = `/${process.env.PUBLIC_PATH || ''}/`.replace('//', '/');
 const sourcePath = path.join(process.cwd(), sourceDir);
 const outputPath = path.join(process.cwd(), 'dist');
-const inProduction =
-  process.argv.indexOf('-p') >= 0 || process.env.NODE_ENV === 'production';
 
 function customizer(objValue, srcValue) {
   if (isArray(objValue)) {
@@ -35,8 +33,8 @@ const wpConfig = {
         },
         {
           test: /\.tsx?$/,
-          exclude: /node_modules/,
-          use: ['happypack/loader', 'awesome-typescript-loader'].filter(Boolean)
+          include: __dirname,
+          use: ['awesome-typescript-loader'].filter(Boolean)
         },
         {
           test: /\.(png|jpe?g|svg|woff2?|ttf|eot)$/,
@@ -85,6 +83,7 @@ const wpConfig = {
   },
   development: {
     mode: 'development',
+    watch: true,
     plugins: [
       new webpack.HotModuleReplacementPlugin({
         fullBuildTimeout: 200

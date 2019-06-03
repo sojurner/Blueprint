@@ -16,22 +16,22 @@ storiesOf('Input', module).addWithJSX('Material', () => (
     inputProps={{
       variant: select('variant', variantSelection, 'outlined', 'Props'),
       label: text('label', 'Label', 'Props'),
-      require: boolean('required', true, 'Props')
-    }}
-    styles={`${text(
-      'styles',
+      required: boolean('required', true, 'Props'),
+      styles: `${text(
+        'styles',
+        `
+          width: 20rem;
+          & div:focus {
+            & fieldset {
+              box-shadow: 2px 2px gray;
+            }
+          }
+        `,
+        'styles',
+        'Props'
+      )}
+  
       `
-      & label {
-        opacity: .5;
-      }
-      & input {
-      background: #f7f7f7;
-      &:focus {
-        background: white;
-      }
-    }
-    `,
-      'Styles'
-    )}`}
+    }}
   />
 ));
