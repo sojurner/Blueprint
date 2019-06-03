@@ -1,13 +1,14 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { IInputProps } from './types';
-import styleFactory from '../../../factories/styleFactory';
+import applyStyles from '../../../factories/styleFactory';
 
-const LystInput: React.FunctionComponent<IInputProps> = ({
-  styles,
-  inputProps
-}) => {
-  const StyledInput = styleFactory(TextField, styles);
+const LystInput: React.FunctionComponent<IInputProps> = ({ inputProps }) => {
+  const [StyledInput, setStyledInput] = React.useState(() => TextField);
+  const { styles } = inputProps;
+  React.useEffect(() => {
+    setStyledInput(() => applyStyles(TextField, styles));
+  }, []);
   return <StyledInput {...inputProps} />;
 };
 

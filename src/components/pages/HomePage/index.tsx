@@ -1,8 +1,10 @@
 import React from 'react';
 import { ThemeProvider } from '@material-ui/styles';
-import themeGenerator from '@factories/themeFactory';
-// List of Available Icons
-//  '@blueprintjs/icons/src/generated/iconNames.ts'
+import themeGenerator, { createPalette } from '@factories/themeFactory';
+// import SearchIconDemo from '@pages/SearchIconDemo';
+import LystButton from '@atoms/Button';
+
+import orange from '@material-ui/core/colors/orange';
 
 // const btnProps = {
 //   icon: 'key-enter',
@@ -14,17 +16,21 @@ import themeGenerator from '@factories/themeFactory';
 
 const ThemeWrapper: React.FunctionComponent<{
   color: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }> = ({ color, children }) => {
-  const [theme, setTheme] = React.useState<undefined | any>();
-  // Rerender on color props change
+  const defaultPalette = { palette: createPalette(orange) };
+  const [theme, setTheme] = React.useState<undefined | any>(defaultPalette);
   React.useEffect(() => {
     themeGenerator(color).then(res => {
       setTheme(res);
     });
   }, [color]);
 
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider theme={theme}>
+      <LystButton />
+    </ThemeProvider>
+  );
 };
 
 export default ThemeWrapper;

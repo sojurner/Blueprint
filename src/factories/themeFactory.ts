@@ -1,12 +1,12 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 import { PaletteOptions } from '@material-ui/core/styles/createPalette';
 
-const dynamicColorImport = async (color: string): Promise<{}> => {
+const dynamicColorImport = async (color: string) => {
   const module = await import(`@material-ui/core/colors/${color}`);
   return await module.default;
 };
 
-const createPalette = (palette: any): PaletteOptions => {
+export const createPalette = (palette: any): PaletteOptions => {
   return {
     tonalOffset: 0.2,
     background: { paper: '#fff', default: '#fafafa' },
@@ -65,10 +65,21 @@ const createPalette = (palette: any): PaletteOptions => {
   };
 };
 
+export const createOverrides = (palette: any) => {
+  return {
+    MuiSvgIcon: {
+      root: {
+        fill: palette['900']
+      }
+    }
+  };
+};
+
 const createTheme = async (color: string) => {
   const colors = await dynamicColorImport(color);
   const palette = createPalette(colors);
-  const theme = { palette };
+  const overrides = createOverrides(colors);
+  const theme = { palette, overrides };
   return createMuiTheme(theme);
 };
 
