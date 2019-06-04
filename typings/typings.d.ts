@@ -18,3 +18,5 @@ declare module '@emotion/core';
 declare module 'react-loadable';
 
 declare module 'color';
+
+declare module 'enzyme-adapter-react-16';

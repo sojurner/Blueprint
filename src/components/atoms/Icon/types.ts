@@ -5,4 +5,4 @@ export interface ILystIconProps {
   tooltip: boolean | undefined;
 }
 
-export type IconVariant = 'Rounded' | 'Outlined' | 'Sharp' | 'TwoTone';
+export type IconVariant = 'Rounded' | 'Outlined' | 'Sharp' | 'TwoTone' | string;

@@ -6,11 +6,6 @@ import LystInput from '@atoms/Input';
 import LystIcon from '@atoms/Icon';
 import { ILystFormProps } from './types';
 
-// type HTMLElementEvent<T extends HTMLElement> = Event & {
-//   target: T;
-//   currentTarget: T;
-// };
-
 const LystForm: React.FunctionComponent<ILystFormProps> = ({
   handleChange,
   values,

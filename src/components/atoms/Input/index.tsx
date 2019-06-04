@@ -7,7 +7,9 @@ const LystInput: React.FunctionComponent<IInputProps> = ({ inputProps }) => {
   const [StyledInput, setStyledInput] = React.useState(() => TextField);
   const { styles } = inputProps;
   React.useEffect(() => {
-    setStyledInput(() => applyStyles(TextField, styles));
+    if (styles) {
+      setStyledInput(() => applyStyles(TextField, styles));
+    }
   }, []);
   return <StyledInput {...inputProps} />;
 };
