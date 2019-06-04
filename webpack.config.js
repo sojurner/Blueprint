@@ -2,7 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const HappyPack = require('happypack');
 const mergeWith = require('lodash/mergeWith');
@@ -114,7 +114,14 @@ const wpConfig = {
       filename: '[name].[chunkhash].js'
     },
     optimization: {
-      minimizer: [new UglifyJsPlugin()],
+      minimizer: [
+        new TerserPlugin({
+          parallel: true,
+          terserOptions: {
+            ecma: 6
+          }
+        })
+      ],
       splitChunks: {
         chunks: 'all',
         maxInitialRequests: Infinity,
