@@ -1,6 +1,6 @@
 import React from 'react';
 import styleFactory from '../../../factories/styleFactory';
-import iconFactory from '../../../factories/iconFactory';
+// import iconFactory from '../../../factories/iconFactory';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
 
@@ -10,11 +10,10 @@ import Tooltip from '@material-ui/core/Tooltip';
 const LystIcon: React.FunctionComponent<ILystIconProps> = ({
   styles,
   iconName,
-  variant,
+  Icon,
   tooltip
 }) => {
-  const Icon = iconFactory(iconName, variant);
-
+  // const Icon = iconFactory(iconName, variant);
   const StyledIconContainer = styleFactory(Grid, styles);
 
   return (

@@ -20,7 +20,7 @@ storiesOf('Button', module).addWithJSX('Material', () => (
         height: ${text('height', '48px', 'Styles')};
         padding: ${text('padding', '0 30px', 'Styles')};
         margin: ${text('margin', '1rem', 'Styles')}
-        box-shadow: 0 3px 10px 3px  #87ceeba1;;
+        box-shadow: 0 3px 10px 3px  #87ceeba1;
       `}
   />
 ));

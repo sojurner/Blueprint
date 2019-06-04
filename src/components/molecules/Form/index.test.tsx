@@ -4,24 +4,27 @@ import LystForm from '.';
 
 const wrap = (
   props = {
-    handleChange: jest.fn(),
-    values: { search: '' },
-    inputList: [
-      {
-        inputProps: {
-          label: 'Search Icons',
-          name: 'search',
-          styles: 'margin: 1rem',
-          variant: 'standard'
-        },
-        iconDetails: {
-          root: 'endAdornment',
-          position: 'start',
-          iconName: 'Search',
-          variant: 'Rounded'
+    formProps: {
+      label: 'Label',
+      handleChange: jest.fn(),
+      values: { search: '' },
+      inputList: [
+        {
+          inputProps: {
+            label: 'Search Icons',
+            name: 'search',
+            styles: 'margin: 1rem',
+            variant: 'standard'
+          },
+          iconDetails: {
+            root: 'endAdornment',
+            position: 'start',
+            iconName: 'Search',
+            variant: 'Rounded'
+          }
         }
-      }
-    ]
+      ]
+    }
   }
 ) => mount(<LystForm {...props} />);
 

@@ -6,8 +6,8 @@ const wrap = (
   props = {
     styles: 'margin: 1rem',
     iconName: 'Wifi',
-    variant: 'Outlined',
-    tooltip: false
+    tooltip: false,
+    Icon: () => {}
   }
 ) => mount(<LystIcon {...props} />);
 
@@ -22,7 +22,7 @@ describe('LystIcon', () => {
     const props = {
       styles: 'margin: 1rem',
       iconName: 'Wifi',
-      variant: 'Outlined',
+      Icon: () => {},
       tooltip: true
     };
     wrapper = wrap(props);
