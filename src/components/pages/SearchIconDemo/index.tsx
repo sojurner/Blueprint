@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import LystForm from '@molecules/Form';
+import iconImport from '@factories/iconFactory';
 import LystIcon from '@atoms/Icon';
 import _icons_ from '../../../assets/iconList';
 import { IInputProps } from '@molecules/Form/types';
@@ -25,21 +26,7 @@ const inputList: IInputProps[] = [
       // iconName must match a value in _icons_
       iconName: 'Search',
       // 1 of 4 different icon variations
-      variant: 'Rounded'
-    }
-  },
-  {
-    inputProps: {
-      label: 'Demo',
-      name: 'password',
-      styles: 'margin: 1rem',
-      variant: 'outlined'
-    },
-    iconDetails: {
-      root: 'endAdornment',
-      position: 'start',
-      iconName: 'Lock',
-      variant: 'Rounded'
+      Icon: React.lazy(() => import('@material-ui/icons/SearchRounded'))
     }
   }
 ];
@@ -91,9 +78,12 @@ const SearchIconDemo = (props: any) => {
       <Grid container spacing={10} direction="row">
         <Grid item sm={4}>
           <LystForm
-            handleChange={handleChange}
-            values={values}
-            inputList={inputList}
+            formProps={{
+              label: 'Label',
+              handleChange,
+              values,
+              inputList
+            }}
           />
         </Grid>
         <Grid
@@ -110,17 +100,21 @@ const SearchIconDemo = (props: any) => {
             height: '20rem'
           }}
         >
-          {iconList.map((icon: any, index) => (
-            <LystIcon
-              key={`icon-${index}`}
-              variant={props.iconVariant}
-              styles={`
+          {iconList.map((icon: any, index) => {
+            const Icon = iconImport(icon, props.iconVariant);
+            return (
+              <LystIcon
+                key={`icon-${index}`}
+                variant={props.iconVariant}
+                styles={`
                 margin: 1rem;
               `}
-              iconName={icon}
-              tooltip={true}
-            />
-          ))}
+                iconName={icon}
+                Icon={Icon}
+                tooltip={true}
+              />
+            );
+          })}
         </Grid>
       </Grid>
     </>

@@ -5,13 +5,13 @@ import applyStyles from '../../../factories/styleFactory';
 
 const LystInput: React.FunctionComponent<IInputProps> = ({ inputProps }) => {
   const [StyledInput, setStyledInput] = React.useState(() => TextField);
-  const { styles } = inputProps;
+  const { styles, ...otherProps } = inputProps;
   React.useEffect(() => {
     if (styles) {
       setStyledInput(() => applyStyles(TextField, styles));
     }
-  }, []);
-  return <StyledInput {...inputProps} />;
+  }, [styles]);
+  return <StyledInput {...otherProps} />;
 };
 
 export default LystInput;

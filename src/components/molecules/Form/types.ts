@@ -1,7 +1,11 @@
 export interface ILystFormProps {
-  inputList: IInputProps[];
-  handleChange: Function;
-  values: { [key: string]: string };
+  formProps: {
+    inputList: IInputProps[];
+    handleChange: Function;
+    values: { [key: string]: string };
+    styles?: string;
+    label?: string;
+  };
 }
 
 export interface IInputProps {
