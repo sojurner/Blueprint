@@ -1,16 +1,19 @@
 // https://github.com/diegohaz/arc/wiki/Testing-components
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-module.exports = new Proxy({}, {
-  get: (target, property) => {
-    const Mock = ({ children }) => <span>{children}</span>
+module.exports = new Proxy(
+  {},
+  {
+    get: (_, property) => {
+      const Mock = ({ children }) => <span>{children}</span>;
 
-    Mock.displayName = property
-    Mock.propTypes = {
-      children: PropTypes.any,
+      Mock.displayName = property;
+      Mock.propTypes = {
+        children: PropTypes.any
+      };
+
+      return Mock;
     }
-
-    return Mock
-  },
-})
+  }
+);
