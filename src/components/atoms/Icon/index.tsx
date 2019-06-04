@@ -15,18 +15,20 @@ const LystIcon: React.FunctionComponent<ILystIconProps> = ({
 }) => {
   const Icon = iconFactory(iconName, variant);
 
-  const StyledIcon = styleFactory(Icon, styles);
+  const StyledIconContainer = styleFactory(Grid, styles);
 
   return (
     <React.Suspense fallback={<CircularProgress />}>
       {tooltip ? (
         <Tooltip title={iconName} placement={'top'}>
-          <Grid style={{ margin: '1.5rem' }}>
-            <StyledIcon />
-          </Grid>
+          <StyledIconContainer>
+            <Icon />
+          </StyledIconContainer>
         </Tooltip>
       ) : (
-        <StyledIcon />
+        <StyledIconContainer>
+          <Icon />
+        </StyledIconContainer>
       )}
     </React.Suspense>
   );

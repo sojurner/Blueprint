@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LystButton should match snapshot 1`] = `
+<LystButton
+  styles=""
+>
+  <Styled(WithStyles(ForwardRef(Button)))
+    color="primary"
+  >
+    <WithStyles(ForwardRef(Button))
+      className="sc-bdVaJa fVTHwm"
+      color="primary"
+    >
+      <ForwardRef(Button)
+        className="sc-bdVaJa fVTHwm"
+        classes={
+          Object {
+            "colorInherit": "MuiButton-colorInherit",
+            "contained": "MuiButton-contained",
+            "containedPrimary": "MuiButton-containedPrimary",
+            "containedSecondary": "MuiButton-containedSecondary",
+            "disabled": "Mui-disabled",
+            "focusVisible": "Mui-focusVisible",
+            "fullWidth": "MuiButton-fullWidth",
+            "label": "MuiButton-label",
+            "outlined": "MuiButton-outlined",
+            "outlinedPrimary": "MuiButton-outlinedPrimary",
+            "outlinedSecondary": "MuiButton-outlinedSecondary",
+            "root": "MuiButton-root",
+            "sizeLarge": "MuiButton-sizeLarge",
+            "sizeSmall": "MuiButton-sizeSmall",
+            "text": "MuiButton-text",
+            "textPrimary": "MuiButton-textPrimary",
+            "textSecondary": "MuiButton-textSecondary",
+          }
+        }
+        color="primary"
+      >
+        <WithStyles(ForwardRef(ButtonBase))
+          className="MuiButton-root sc-bdVaJa fVTHwm MuiButton-textPrimary MuiButton-text"
+          component="button"
+          disabled={false}
+          focusRipple={true}
+          focusVisibleClassName="Mui-focusVisible"
+          type="button"
+        >
+          <ForwardRef(ButtonBase)
+            className="MuiButton-root sc-bdVaJa fVTHwm MuiButton-textPrimary MuiButton-text"
+            classes={
+              Object {
+                "disabled": "Mui-disabled",
+                "focusVisible": "Mui-focusVisible",
+                "root": "MuiButtonBase-root",
+              }
+            }
+            component="button"
+            disabled={false}
+            focusRipple={true}
+            focusVisibleClassName="Mui-focusVisible"
+            type="button"
+          >
+            <button
+              className="MuiButtonBase-root MuiButton-root sc-bdVaJa fVTHwm MuiButton-textPrimary MuiButton-text"
+              disabled={false}
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="MuiButton-label"
+              >
+                Catalyst
+              </span>
+              <NoSsr>
+                <WithStyles(TouchRipple)
+                  center={false}
+                >
+                  <TouchRipple
+                    center={false}
+                    classes={
+                      Object {
+                        "child": "MuiTouchRipple-child",
+                        "childLeaving": "MuiTouchRipple-childLeaving",
+                        "childPulsate": "MuiTouchRipple-childPulsate",
+                        "ripple": "MuiTouchRipple-ripple",
+                        "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                        "rippleVisible": "MuiTouchRipple-rippleVisible",
+                        "root": "MuiTouchRipple-root",
+                      }
+                    }
+                  >
+                    <span
+                      className="MuiTouchRipple-root"
+                    >
+                      <TransitionGroup
+                        childFactory={[Function]}
+                        component={null}
+                        enter={true}
+                        exit={true}
+                      />
+                    </span>
+                  </TouchRipple>
+                </WithStyles(TouchRipple)>
+              </NoSsr>
+            </button>
+          </ForwardRef(ButtonBase)>
+        </WithStyles(ForwardRef(ButtonBase))>
+      </ForwardRef(Button)>
+    </WithStyles(ForwardRef(Button))>
+  </Styled(WithStyles(ForwardRef(Button)))>
+</LystButton>
+`;
+
+exports[`LystButton should match snapshot when styles are given 1`] = `
+<LystButton
+  styles="margin 1rem"
+>
+  <Styled(WithStyles(ForwardRef(Button)))
+    color="primary"
+  >
+    <WithStyles(ForwardRef(Button))
+      className="sc-bwzfXH kKrVVs"
+      color="primary"
+    >
+      <ForwardRef(Button)
+        className="sc-bwzfXH kKrVVs"
+        classes={
+          Object {
+            "colorInherit": "MuiButton-colorInherit",
+            "contained": "MuiButton-contained",
+            "containedPrimary": "MuiButton-containedPrimary",
+            "containedSecondary": "MuiButton-containedSecondary",
+            "disabled": "Mui-disabled",
+            "focusVisible": "Mui-focusVisible",
+            "fullWidth": "MuiButton-fullWidth",
+            "label": "MuiButton-label",
+            "outlined": "MuiButton-outlined",
+            "outlinedPrimary": "MuiButton-outlinedPrimary",
+            "outlinedSecondary": "MuiButton-outlinedSecondary",
+            "root": "MuiButton-root",
+            "sizeLarge": "MuiButton-sizeLarge",
+            "sizeSmall": "MuiButton-sizeSmall",
+            "text": "MuiButton-text",
+            "textPrimary": "MuiButton-textPrimary",
+            "textSecondary": "MuiButton-textSecondary",
+          }
+        }
+        color="primary"
+      >
+        <WithStyles(ForwardRef(ButtonBase))
+          className="MuiButton-root sc-bwzfXH kKrVVs MuiButton-textPrimary MuiButton-text"
+          component="button"
+          disabled={false}
+          focusRipple={true}
+          focusVisibleClassName="Mui-focusVisible"
+          type="button"
+        >
+          <ForwardRef(ButtonBase)
+            className="MuiButton-root sc-bwzfXH kKrVVs MuiButton-textPrimary MuiButton-text"
+            classes={
+              Object {
+                "disabled": "Mui-disabled",
+                "focusVisible": "Mui-focusVisible",
+                "root": "MuiButtonBase-root",
+              }
+            }
+            component="button"
+            disabled={false}
+            focusRipple={true}
+            focusVisibleClassName="Mui-focusVisible"
+            type="button"
+          >
+            <button
+              className="MuiButtonBase-root MuiButton-root sc-bwzfXH kKrVVs MuiButton-textPrimary MuiButton-text"
+              disabled={false}
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="MuiButton-label"
+              >
+                Catalyst
+              </span>
+              <NoSsr>
+                <WithStyles(TouchRipple)
+                  center={false}
+                >
+                  <TouchRipple
+                    center={false}
+                    classes={
+                      Object {
+                        "child": "MuiTouchRipple-child",
+                        "childLeaving": "MuiTouchRipple-childLeaving",
+                        "childPulsate": "MuiTouchRipple-childPulsate",
+                        "ripple": "MuiTouchRipple-ripple",
+                        "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                        "rippleVisible": "MuiTouchRipple-rippleVisible",
+                        "root": "MuiTouchRipple-root",
+                      }
+                    }
+                  >
+                    <span
+                      className="MuiTouchRipple-root"
+                    >
+                      <TransitionGroup
+                        childFactory={[Function]}
+                        component={null}
+                        enter={true}
+                        exit={true}
+                      />
+                    </span>
+                  </TouchRipple>
+                </WithStyles(TouchRipple)>
+              </NoSsr>
+            </button>
+          </ForwardRef(ButtonBase)>
+        </WithStyles(ForwardRef(ButtonBase))>
+      </ForwardRef(Button)>
+    </WithStyles(ForwardRef(Button))>
+  </Styled(WithStyles(ForwardRef(Button)))>
+</LystButton>
+`;

@@ -114,6 +114,9 @@ const SearchIconDemo = (props: any) => {
             <LystIcon
               key={`icon-${index}`}
               variant={props.iconVariant}
+              styles={`
+                margin: 1rem;
+              `}
               iconName={icon}
               tooltip={true}
             />

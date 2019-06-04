@@ -6,7 +6,7 @@ const dynamicIconImport = (
   variant: IconVariant = 'Rounded'
 ): any => {
   // matches file name in material icon library
-  return iconList[iconName][variant];
+  return iconList(iconName)[variant];
 };
 
 export default dynamicIconImport;
