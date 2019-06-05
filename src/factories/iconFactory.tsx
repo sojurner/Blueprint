@@ -1,5 +1,5 @@
 import iconList from '../assets/iconImports';
-import { IconVariant } from '@atoms/Icon/types';
+import { IconVariant } from '@atoms/IconCDN/types';
 
 const dynamicIconImport = (
   iconName: string,

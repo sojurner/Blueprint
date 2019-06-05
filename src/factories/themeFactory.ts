@@ -71,6 +71,11 @@ export const createOverrides = (palette: any) => {
       root: {
         fill: palette['900']
       }
+    },
+    MuiIcon: {
+      root: {
+        color: palette['900']
+      }
     }
   };
 };

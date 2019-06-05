@@ -3,7 +3,7 @@ import styleFactory from '../../../factories/styleFactory';
 // import iconFactory from '../../../factories/iconFactory';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
-
+import Icon from '@material-ui/core/Icon';
 import { ILystIconProps } from './types';
 import Tooltip from '@material-ui/core/Tooltip';
 
@@ -20,12 +20,12 @@ const LystIcon: React.FunctionComponent<ILystIconProps> = ({
       {tooltip ? (
         <Tooltip title={iconName} placement={'top'}>
           <StyledIconContainer>
-            <i className={`material-icons-${variant}`}>{icon}</i>
+            <Icon className={`material-icons-${variant}`}>{icon}</Icon>
           </StyledIconContainer>
         </Tooltip>
       ) : (
         <StyledIconContainer>
-          <i className={`material-icons-${variant}`}>{icon}</i>
+          <Icon className={`material-icons-${variant}`}>{icon}</Icon>
         </StyledIconContainer>
       )}
     </React.Suspense>
