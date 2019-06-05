@@ -37,7 +37,7 @@ storiesOf('Atoms', module)
     <LystInput
       inputProps={{
         variant: select('variant', variantSelection, 'outlined', 'Props'),
-        label: text('label', 'Label', 'Props'),
+        label: text('label', 'Placeholder', 'Props'),
         required: boolean('required', true, 'Props'),
         styles: `${text(
           'styles',

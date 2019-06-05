@@ -10,7 +10,7 @@ const variantSelection = {
   outlined: 'outlined'
 };
 
-storiesOf('Search Demo', module).addWithJSX('Material CDN', () => (
+storiesOf('Demos', module).addWithJSX('Search Icon Demo (CDN)', () => (
   <SearchIconDemo
     iconVariant={select('Icon Variant', variantSelection, 'outlined', 'Props')}
   />

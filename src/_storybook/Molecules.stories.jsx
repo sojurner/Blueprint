@@ -9,8 +9,8 @@ const styles = `
   margin: 1rem;
 `;
 
-storiesOf('Form', module)
-  .addWithJSX('With Start Adorment', () => (
+storiesOf('Molecules', module)
+  .addWithJSX('Form(W/StartAdorment)', () => (
     <LystForm
       formProps={{
         handleChange: () => {},
@@ -30,7 +30,7 @@ storiesOf('Form', module)
               root: 'startAdornment',
               position: 'start',
               iconName: 'Search',
-              Icon: React.lazy(() => import('@material-ui/icons/SearchRounded'))
+              icon: 'search'
             }
           },
           {
@@ -45,7 +45,7 @@ storiesOf('Form', module)
               root: 'startAdornment',
               position: 'start',
               iconName: 'Lock',
-              Icon: React.lazy(() => import('@material-ui/icons/LockRounded'))
+              icon: 'lock'
             }
           },
           {
@@ -60,7 +60,7 @@ storiesOf('Form', module)
               root: 'startAdornment',
               position: 'start',
               iconName: 'Wifi',
-              Icon: React.lazy(() => import('@material-ui/icons/PersonTwoTone'))
+              icon: 'wifi'
             }
           }
         ],
@@ -74,7 +74,7 @@ storiesOf('Form', module)
       }}
     />
   ))
-  .addWithJSX('WithEndAdornment', () => (
+  .addWithJSX('Form(W/EndAdornment)', () => (
     <LystForm
       formProps={{
         handleChange: () => {},
@@ -87,7 +87,6 @@ storiesOf('Form', module)
               label: 'Search Icons',
               name: 'search',
               styles: text('input styles', styles, 'Props'),
-
               variant: 'standard',
               margin: 'dense'
             },
@@ -95,7 +94,7 @@ storiesOf('Form', module)
               root: 'endAdornment',
               position: 'start',
               iconName: 'Search',
-              Icon: React.lazy(() => import('@material-ui/icons/SearchRounded'))
+              icon: 'search'
             }
           },
           {
@@ -110,7 +109,7 @@ storiesOf('Form', module)
               root: 'endAdornment',
               position: 'start',
               iconName: 'Lock',
-              Icon: React.lazy(() => import('@material-ui/icons/LockRounded'))
+              icon: 'lock'
             }
           },
           {
@@ -125,7 +124,7 @@ storiesOf('Form', module)
               root: 'endAdornment',
               position: 'start',
               iconName: 'Wifi',
-              Icon: React.lazy(() => import('@material-ui/icons/PersonTwoTone'))
+              icon: 'wifi'
             }
           }
         ],
