@@ -8,6 +8,16 @@ import { select } from '@storybook/addon-knobs/react';
 
 import { StylesProvider } from '@material-ui/styles';
 
+const AddCDN = () => {
+  const { head } = document;
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href =
+    'https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp';
+  head.appendChild(link);
+};
+AddCDN();
+
 const colorSelection = {
   orange: 'orange',
   blue: 'blue',

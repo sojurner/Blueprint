@@ -10,23 +10,22 @@ import Tooltip from '@material-ui/core/Tooltip';
 const LystIcon: React.FunctionComponent<ILystIconProps> = ({
   styles,
   iconName,
-  Icon,
-  tooltip
+  icon,
+  tooltip,
+  variant
 }) => {
-  // const Icon = iconFactory(iconName, variant);
   const StyledIconContainer = styleFactory(Grid, styles);
-
   return (
     <React.Suspense fallback={<CircularProgress />}>
       {tooltip ? (
         <Tooltip title={iconName} placement={'top'}>
           <StyledIconContainer>
-            <Icon />
+            <i className={`material-icons-${variant}`}>{icon}</i>
           </StyledIconContainer>
         </Tooltip>
       ) : (
         <StyledIconContainer>
-          <Icon />
+          <i className={`material-icons-${variant}`}>{icon}</i>
         </StyledIconContainer>
       )}
     </React.Suspense>

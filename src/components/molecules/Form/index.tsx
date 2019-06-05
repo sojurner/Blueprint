@@ -18,8 +18,8 @@ const LystForm: React.FunctionComponent<ILystFormProps> = ({ formProps }) => {
 
   return (
     <FormControl component="fieldset">
-      {label && <FormLabel component="legend">{label}</FormLabel>}
       <StyledFormControl>
+        {label && <FormLabel component="legend">{label}</FormLabel>}
         {inputList.map((input, index) => {
           const { iconDetails, inputProps } = input;
           const { name } = inputProps;

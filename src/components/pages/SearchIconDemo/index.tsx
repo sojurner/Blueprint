@@ -2,9 +2,8 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import LystForm from '@molecules/Form';
-import iconImport from '@factories/iconFactory';
-import LystIcon from '@atoms/Icon';
-import _icons_ from '../../../assets/iconList';
+import LystIconCDN from '@atoms/IconCDN';
+import _icons_ from '../../../assets/iconCDN';
 import { IInputProps } from '@molecules/Form/types';
 
 // Example Format of inputProps
@@ -31,7 +30,7 @@ const inputList: IInputProps[] = [
   }
 ];
 
-const initialIconList = _icons_.filter((_, index) => index < 48);
+const initialIconList = _icons_.filter((_, index) => index < 60);
 
 const SearchIconDemo = (props: any) => {
   // control form for all input elements created
@@ -52,6 +51,7 @@ const SearchIconDemo = (props: any) => {
     let filteredList;
     // update value in state controlled form
     setValues({ ...values, [name]: value });
+
     // filter iconList by input
     if (name === 'search' && value) {
       filteredList = _icons_.filter(icon => icon.toLowerCase().includes(value));
@@ -59,7 +59,7 @@ const SearchIconDemo = (props: any) => {
       filteredList = initialIconList;
     }
     // truncate iconList to 48
-    filteredList.length = 48;
+    filteredList.length = 60;
     setIconList(filteredList);
   };
 
@@ -79,17 +79,19 @@ const SearchIconDemo = (props: any) => {
         <Grid item sm={4}>
           <LystForm
             formProps={{
-              label: 'Label',
+              label: 'Icon Search',
               handleChange,
               values,
-              inputList
+              inputList,
+              styles: `& legend {
+                font-weight: bold;
+              }`
             }}
           />
         </Grid>
         <Grid
-          spacing={10}
           item
-          sm={6}
+          sm={4}
           container
           direction={'row'}
           wrap={'wrap'}
@@ -100,17 +102,18 @@ const SearchIconDemo = (props: any) => {
             height: '20rem'
           }}
         >
-          {iconList.map((icon: any, index) => {
-            const Icon = iconImport(icon, props.iconVariant);
+          {iconList.map((icon: any, index: number) => {
             return (
-              <LystIcon
+              <LystIconCDN
                 key={`icon-${index}`}
                 variant={props.iconVariant}
                 styles={`
                 margin: 1rem;
+                width: 1.5rem;
+                overflow: hidden;
               `}
                 iconName={icon}
-                Icon={Icon}
+                icon={icon}
                 tooltip={true}
               />
             );
