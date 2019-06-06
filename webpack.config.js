@@ -66,6 +66,7 @@ const wpConfig = {
       alias: {
         '@atoms': path.resolve(__dirname, './src/components/atoms'),
         '@molecules': path.resolve(__dirname, './src/components/molecules'),
+        '@compounds': path.resolve(__dirname, './src/components/compounds'),
         '@pages': path.resolve(__dirname, './src/components/pages'),
         '@atomic': path.resolve(__dirname, './src'),
         '@templates': path.resolve(__dirname, './src/components/templates'),

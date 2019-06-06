@@ -29,7 +29,7 @@ storiesOf('Molecules', module)
             iconDetails: {
               root: 'startAdornment',
               position: 'start',
-              iconName: 'Search',
+              name: 'Search',
               icon: 'search'
             }
           },
@@ -44,7 +44,7 @@ storiesOf('Molecules', module)
             iconDetails: {
               root: 'startAdornment',
               position: 'start',
-              iconName: 'Lock',
+              name: 'Lock',
               icon: 'lock'
             }
           },
@@ -59,7 +59,7 @@ storiesOf('Molecules', module)
             iconDetails: {
               root: 'startAdornment',
               position: 'start',
-              iconName: 'Wifi',
+              name: 'Wifi',
               icon: 'wifi'
             }
           }
@@ -93,7 +93,7 @@ storiesOf('Molecules', module)
             iconDetails: {
               root: 'endAdornment',
               position: 'start',
-              iconName: 'Search',
+              name: 'Search',
               icon: 'search'
             }
           },
@@ -108,7 +108,7 @@ storiesOf('Molecules', module)
             iconDetails: {
               root: 'endAdornment',
               position: 'start',
-              iconName: 'Lock',
+              name: 'Lock',
               icon: 'lock'
             }
           },
@@ -123,7 +123,7 @@ storiesOf('Molecules', module)
             iconDetails: {
               root: 'endAdornment',
               position: 'start',
-              iconName: 'Wifi',
+              name: 'Wifi',
               icon: 'wifi'
             }
           }
