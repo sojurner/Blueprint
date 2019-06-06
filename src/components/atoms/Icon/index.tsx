@@ -1,35 +1,32 @@
 import React from 'react';
 import styleFactory from '../../../factories/styleFactory';
-// import iconFactory from '../../../factories/iconFactory';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Grid from '@material-ui/core/Grid';
-import Icon from '@material-ui/core/Icon';
 import { ILystIconProps } from './types';
 import Tooltip from '@material-ui/core/Tooltip';
 
-const LystIconCDN: React.FunctionComponent<ILystIconProps> = ({
+const LystIcon: React.FunctionComponent<ILystIconProps> = ({
   styles,
-  name,
-  icon,
-  tooltip,
-  variant
+  iconName,
+  Icon,
+  tooltip
 }) => {
   const StyledIconContainer = styleFactory(Grid, styles);
   return (
     <React.Suspense fallback={<CircularProgress />}>
       {tooltip ? (
-        <Tooltip title={name} placement={'top'}>
+        <Tooltip title={iconName} placement={'top'}>
           <StyledIconContainer>
-            <Icon className={`material-icons-${variant}`}>{icon}</Icon>
+            <Icon />
           </StyledIconContainer>
         </Tooltip>
       ) : (
         <StyledIconContainer>
-          <Icon className={`material-icons-${variant}`}>{icon}</Icon>
+          <Icon />
         </StyledIconContainer>
       )}
     </React.Suspense>
   );
 };
 
-export default LystIconCDN;
+export default LystIcon;
