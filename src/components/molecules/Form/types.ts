@@ -1,21 +1,16 @@
 export interface ILystFormProps {
-  formProps: {
-    inputList: IInputProps[];
-    handleChange: Function;
-    values: { [key: string]: string };
-    styles?: string;
-    label?: string;
-  };
+  formProps: IFormProps;
 }
 
-export interface IInputProps {
-  inputProps: {
-    label: string;
-    styles?: string;
-    variant: string;
-    onChange?: Function;
-    name: string;
-  };
+export interface IFormProps {
+  inputList: ILystInputProps[];
+  onChange: Function;
+  styles?: string;
+  label?: string;
+}
+
+export interface ILystInputProps {
+  inputProps: IInputProps;
   iconDetails?:
     | {
         root: 'startAdornment' | 'endAdornment';
@@ -24,4 +19,12 @@ export interface IInputProps {
         variant: string;
       }
     | any;
+}
+
+export interface IInputProps {
+  label: string;
+  styles?: string;
+  variant: string;
+  onChange?: Function;
+  name: string;
 }
