@@ -7,7 +7,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 const LystIcon: React.FunctionComponent<ILystIconProps> = ({
   styles,
-  iconName,
+  name,
   Icon,
   tooltip
 }) => {
@@ -15,7 +15,7 @@ const LystIcon: React.FunctionComponent<ILystIconProps> = ({
   return (
     <React.Suspense fallback={<CircularProgress />}>
       {tooltip ? (
-        <Tooltip title={iconName} placement={'top'}>
+        <Tooltip title={name} placement={'top'}>
           <StyledIconContainer>
             <Icon />
           </StyledIconContainer>
