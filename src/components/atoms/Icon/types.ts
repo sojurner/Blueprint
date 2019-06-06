@@ -1,6 +1,6 @@
 export interface ILystIconProps {
   styles?: string;
-  iconName: string;
+  name: string;
   Icon: Function;
   tooltip: boolean;
 }

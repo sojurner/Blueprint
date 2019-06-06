@@ -30,7 +30,7 @@ storiesOf('Molecules', module)
               root: 'startAdornment',
               position: 'start',
               name: 'Search',
-              icon: 'search'
+              Icon: React.lazy(() => import('@material-ui/icons/SearchRounded'))
             }
           },
           {
@@ -45,7 +45,7 @@ storiesOf('Molecules', module)
               root: 'startAdornment',
               position: 'start',
               name: 'Lock',
-              icon: 'lock'
+              Icon: React.lazy(() => import('@material-ui/icons/LockRounded'))
             }
           },
           {
@@ -60,7 +60,7 @@ storiesOf('Molecules', module)
               root: 'startAdornment',
               position: 'start',
               name: 'Wifi',
-              icon: 'wifi'
+              Icon: React.lazy(() => import('@material-ui/icons/WifiRounded'))
             }
           }
         ],
@@ -94,7 +94,7 @@ storiesOf('Molecules', module)
               root: 'endAdornment',
               position: 'start',
               name: 'Search',
-              icon: 'search'
+              Icon: React.lazy(() => import('@material-ui/icons/SearchRounded'))
             }
           },
           {
@@ -109,7 +109,7 @@ storiesOf('Molecules', module)
               root: 'endAdornment',
               position: 'start',
               name: 'Lock',
-              icon: 'lock'
+              Icon: React.lazy(() => import('@material-ui/icons/LockRounded'))
             }
           },
           {
@@ -124,7 +124,7 @@ storiesOf('Molecules', module)
               root: 'endAdornment',
               position: 'start',
               name: 'Wifi',
-              icon: 'wifi'
+              Icon: React.lazy(() => import('@material-ui/icons/WifiRounded'))
             }
           }
         ],

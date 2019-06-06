@@ -5,7 +5,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 // import TextField from '@material-ui/core/TextField';
 import LystInput from '@atoms/Input';
-import LystIcon from '@atoms/IconCDN';
+import LystIcon from '@atoms/Icon';
 import { ILystFormProps } from './types';
 import applyStyles from '@factories/styleFactory';
 
