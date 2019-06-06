@@ -6,8 +6,7 @@ const wrap = (
   props = {
     formProps: {
       label: 'Label',
-      handleChange: jest.fn(),
-      values: { search: '' },
+      onChange: jest.fn(),
       inputList: [
         {
           inputProps: {
