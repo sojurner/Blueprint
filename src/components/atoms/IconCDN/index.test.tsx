@@ -5,7 +5,7 @@ import LystIcon from '.';
 const wrap = (
   props = {
     styles: 'margin: 1rem',
-    iconName: 'Wifi',
+    name: 'Wifi',
     tooltip: false,
     icon: 'wifi'
   }
@@ -21,7 +21,7 @@ describe('LystIcon', () => {
   it('should match snapshot when tooltip is active', () => {
     const props = {
       styles: 'margin: 1rem',
-      iconName: 'Wifi',
+      name: 'Wifi',
       icon: 'wifi',
       tooltip: true
     };

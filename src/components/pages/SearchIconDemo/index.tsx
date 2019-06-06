@@ -1,13 +1,13 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import LystForm from '@molecules/Form';
+import LystSearchGroupContent from '@compounds/SearchGroupContent';
 import LystIconCDN from '@atoms/IconCDN';
 import _icons_ from '../../../assets/iconCDN';
-import { IInputProps } from '@molecules/Form/types';
+import { ILystInputProps } from '@molecules/Form/types';
+import iconByCategories from '../../../assets/iconCDN';
 
 // Example Format of inputProps
-const inputList: IInputProps[] = [
+const inputList: ILystInputProps[] = [
   {
     inputProps: {
       // label shown for input
@@ -30,95 +30,60 @@ const inputList: IInputProps[] = [
   }
 ];
 
-const initialIconList = _icons_.filter((_, index) => index < 60);
-
 const SearchIconDemo = (props: any) => {
-  // control form for all input elements created
-  const [values, setValues] = React.useState<{ [index: string]: string }>({});
-  // Icon List
-  const [iconList, setIconList] = React.useState(initialIconList);
-
-  // set values of controlled form on CDM
-  React.useEffect(() => {
-    inputList.forEach(input => {
-      const { name } = input.inputProps;
-      values[name] = '';
-    });
-  }, []);
-
-  const handleChange = (name: string) => (event: any) => {
-    const { value } = event.target;
-    let filteredList;
-    // update value in state controlled form
-    setValues({ ...values, [name]: value });
-
-    // filter iconList by input
-    if (name === 'search' && value) {
-      filteredList = _icons_.filter(icon => icon.toLowerCase().includes(value));
-    } else {
-      filteredList = initialIconList;
-    }
-    // truncate iconList to 48
-    filteredList.length = 60;
-    setIconList(filteredList);
-  };
-
+  const allIcons = Object.keys(iconByCategories);
   return (
     <>
-      <Typography
-        style={{
-          width: 'max-content',
-          textAlign: 'center',
-          margin: '2rem auto 4rem auto'
-        }}
-      >
-        {_icons_.length} Total icons
-      </Typography>
-
-      <Grid container spacing={10} direction="row">
-        <Grid item sm={4}>
-          <LystForm
-            formProps={{
-              label: 'Icon Search',
-              handleChange,
-              values,
-              inputList,
-              styles: `& legend {
-                font-weight: bold;
-              }`
-            }}
-          />
-        </Grid>
-        <Grid
-          item
-          sm={4}
-          container
-          direction={'row'}
-          wrap={'wrap'}
-          style={{
-            marginTop: '2rem',
-            padding: '0 40px 40px 40px',
-            overflowY: 'scroll',
-            height: '20rem'
-          }}
-        >
-          {iconList.map((icon: any, index: number) => {
-            return (
-              <LystIconCDN
-                key={`icon-${index}`}
-                variant={props.iconVariant}
-                styles={`
-                margin: 1rem;
-                width: 1.5rem;
-                overflow: hidden;
-              `}
-                iconName={icon}
-                icon={icon}
-                tooltip={true}
+      <Grid style={{ margin: 'auto' }} container spacing={1} direction="row">
+        {allIcons.map((category: string) => {
+          const list: any = iconByCategories[category].map(
+            (icon: string, index: number) => {
+              return (
+                <LystIconCDN
+                  key={`icon-${index}`}
+                  variant={props.iconVariant}
+                  styles={`
+                    margin: 1rem;
+                    width: 1.5rem;
+                    overflow: hidden;
+                  `}
+                  name={icon}
+                  icon={icon}
+                  tooltip={true}
+                />
+              );
+            }
+          );
+          return (
+            <>
+              <LystSearchGroupContent
+                rootProps={{
+                  styles: `
+                  border: 1px solid #e6e6ea;
+                  width: 20rem;
+                  `
+                }}
+                listProps={{
+                  list,
+                  styles: `
+                    overflow-y: scroll;
+                    max-height: 20rem;
+                    min-height: 20rem;
+                  `
+                }}
+                formProps={{
+                  inputList,
+                  onChange: () => {},
+                  styles: `
+                    border-bottom: 1px solid #e6e6ea;
+                    padding: 2rem;
+                  `,
+                  label: category
+                }}
               />
-            );
-          })}
-        </Grid>
+            </>
+          );
+        })}
       </Grid>
     </>
   );

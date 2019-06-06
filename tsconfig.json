@@ -17,6 +17,7 @@
     "paths": {
       "@atoms/*": ["components/atoms/*"],
       "@molecules/*": ["components/molecules/*"],
+      "@compounds/*": ["components/compounds/*"],
       "@pages/*": ["components/pages/*"],
       "@templates/*": ["components/templates/*"],
       "@factories/*": ["factories/*"]

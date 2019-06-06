@@ -5,16 +5,33 @@ import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 // import TextField from '@material-ui/core/TextField';
 import LystInput from '@atoms/Input';
-import LystIcon from '@atoms/Icon';
+import LystIcon from '@atoms/IconCDN';
 import { ILystFormProps } from './types';
 import applyStyles from '@factories/styleFactory';
 
 const LystForm: React.FunctionComponent<ILystFormProps> = ({ formProps }) => {
-  const { styles, handleChange, values, inputList, label } = formProps;
+  const { styles, inputList, onChange, label } = formProps;
   const [StyledFormControl, setForm] = React.useState(() => FormGroup);
+  // control form for all input elements created
+  const [values, setValues] = React.useState<{ [index: string]: string }>({});
+  // Icon List
+
+  // set values of controlled form on CDM
   React.useEffect(() => {
+    inputList.forEach(input => {
+      const { name } = input.inputProps;
+      values[name] = '';
+    });
+
     setForm(() => applyStyles(FormGroup, styles));
   }, [styles]);
+
+  const handleChange = (name: string) => (event: any) => {
+    const { value } = event.target;
+    // update value in state controlled form
+    setValues({ ...values, [name]: value });
+    onChange(value);
+  };
 
   return (
     <FormControl component="fieldset">
