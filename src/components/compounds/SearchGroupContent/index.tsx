@@ -1,13 +1,19 @@
 import React from 'react';
 import LystForm from '@molecules/Form';
 import Grid from '@material-ui/core/Grid';
-import LystList from '@molecules/List';
 import applyStyles from '@factories/styleFactory';
 import {
   ILystSearchGroupContentProps,
   IAdjustedFormProps,
   IAdjustedListProps
 } from './types';
+import Skeleton from '@atoms/Skeleton';
+
+const LazyList = React.lazy(() => {
+  return new Promise(resolve => setTimeout(resolve, 20000)).then(() =>
+    import('@molecules/List')
+  );
+});
 
 const SearchGroupContent: React.FunctionComponent<
   ILystSearchGroupContentProps
@@ -46,7 +52,26 @@ const SearchGroupContent: React.FunctionComponent<
   return (
     <StyledSearchGroupContent>
       <LystForm formProps={adjustedFormProps} />
-      <LystList listProps={adjustedListProps} />
+      <React.Suspense
+        fallback={
+          <Skeleton
+            rootProps={{
+              count: 5,
+              width: '30px',
+              widthRandomness: 0,
+              height: '30px',
+              borderRadius: '1rem'
+            }}
+            styles={`
+              display: flex;
+              width: 100%;
+              height: 100%;
+            `}
+          />
+        }
+      >
+        <LazyList listProps={adjustedListProps} />
+      </React.Suspense>
     </StyledSearchGroupContent>
   );
 };
