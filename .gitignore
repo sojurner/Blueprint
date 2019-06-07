@@ -5,3 +5,6 @@ dist
 node_modules
 coverage
 webpack/webpack-assets.json
+
+/src-example
+/storybook-static
