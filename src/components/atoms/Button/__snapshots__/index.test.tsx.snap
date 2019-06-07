@@ -2,14 +2,15 @@
 
 exports[`LystButton should match snapshot 1`] = `
 <LystButton
-  styles=""
+  rootProps={
+    Object {
+      "styles": "",
+    }
+  }
 >
-  <Styled(WithStyles(ForwardRef(Button)))
-    color="primary"
-  >
+  <Styled(WithStyles(ForwardRef(Button)))>
     <WithStyles(ForwardRef(Button))
       className="sc-bdVaJa fVTHwm"
-      color="primary"
     >
       <ForwardRef(Button)
         className="sc-bdVaJa fVTHwm"
@@ -34,10 +35,9 @@ exports[`LystButton should match snapshot 1`] = `
             "textSecondary": "MuiButton-textSecondary",
           }
         }
-        color="primary"
       >
         <WithStyles(ForwardRef(ButtonBase))
-          className="MuiButton-root sc-bdVaJa fVTHwm MuiButton-textPrimary MuiButton-text"
+          className="MuiButton-root sc-bdVaJa fVTHwm MuiButton-text"
           component="button"
           disabled={false}
           focusRipple={true}
@@ -45,7 +45,7 @@ exports[`LystButton should match snapshot 1`] = `
           type="button"
         >
           <ForwardRef(ButtonBase)
-            className="MuiButton-root sc-bdVaJa fVTHwm MuiButton-textPrimary MuiButton-text"
+            className="MuiButton-root sc-bdVaJa fVTHwm MuiButton-text"
             classes={
               Object {
                 "disabled": "Mui-disabled",
@@ -60,7 +60,7 @@ exports[`LystButton should match snapshot 1`] = `
             type="button"
           >
             <button
-              className="MuiButtonBase-root MuiButton-root sc-bdVaJa fVTHwm MuiButton-textPrimary MuiButton-text"
+              className="MuiButtonBase-root MuiButton-root sc-bdVaJa fVTHwm MuiButton-text"
               disabled={false}
               onBlur={[Function]}
               onFocus={[Function]}

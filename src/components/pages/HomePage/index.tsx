@@ -28,7 +28,7 @@ const ThemeWrapper: React.FunctionComponent<{
 
   return (
     <ThemeProvider theme={theme}>
-      <LystButton />
+      <LystButton rootProps={{ styles: '' }} />
     </ThemeProvider>
   );
 };

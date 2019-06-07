@@ -2,7 +2,8 @@ import React from 'react';
 import { mount } from 'enzyme';
 import LystButton from '.';
 
-const wrap = (props = { styles: '' }) => mount(<LystButton {...props} />);
+const wrap = (props = { rootProps: { styles: '' } }) =>
+  mount(<LystButton {...props} />);
 
 describe('LystButton', () => {
   let wrapper = wrap();
@@ -12,9 +13,9 @@ describe('LystButton', () => {
   });
 
   it('should match snapshot when styles are given', () => {
-    const styles = 'margin 1rem';
-    wrapper = wrap({ styles });
-    expect(wrapper.props()).toEqual({ styles });
+    const rootProps = { styles: 'margin 1rem' };
+    wrapper = wrap({ rootProps });
+    expect(wrapper.props).toEqual({ rootProps });
     expect(wrapper).toMatchSnapshot();
   });
 });

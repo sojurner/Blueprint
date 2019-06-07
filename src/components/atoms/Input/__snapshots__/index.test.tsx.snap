@@ -8,21 +8,17 @@ exports[`LystInput should match snapshot 1`] = `
     }
   }
 >
-  <WithStyles(ForwardRef(TextField))
-    styles=""
-  >
+  <WithStyles(ForwardRef(TextField))>
     <ForwardRef(TextField)
       classes={
         Object {
           "root": "MuiTextField-root",
         }
       }
-      styles=""
     >
       <WithStyles(ForwardRef(FormControl))
         className="MuiTextField-root"
         required={false}
-        styles=""
         variant="standard"
       >
         <ForwardRef(FormControl)
@@ -36,12 +32,10 @@ exports[`LystInput should match snapshot 1`] = `
             }
           }
           required={false}
-          styles=""
           variant="standard"
         >
           <div
             className="MuiFormControl-root MuiTextField-root"
-            styles=""
           >
             <WithStyles(ForwardRef(Input))>
               <ForwardRef(Input)
@@ -145,12 +139,9 @@ exports[`LystInput should match snapshot when styles are given 1`] = `
     }
   }
 >
-  <Styled(WithStyles(ForwardRef(TextField)))
-    styles="margin 1rem"
-  >
+  <Styled(WithStyles(ForwardRef(TextField)))>
     <WithStyles(ForwardRef(TextField))
       className="sc-bdVaJa dFnbXv"
-      styles="margin 1rem"
     >
       <ForwardRef(TextField)
         className="sc-bdVaJa dFnbXv"
@@ -159,12 +150,10 @@ exports[`LystInput should match snapshot when styles are given 1`] = `
             "root": "MuiTextField-root",
           }
         }
-        styles="margin 1rem"
       >
         <WithStyles(ForwardRef(FormControl))
           className="MuiTextField-root sc-bdVaJa dFnbXv"
           required={false}
-          styles="margin 1rem"
           variant="standard"
         >
           <ForwardRef(FormControl)
@@ -178,12 +167,10 @@ exports[`LystInput should match snapshot when styles are given 1`] = `
               }
             }
             required={false}
-            styles="margin 1rem"
             variant="standard"
           >
             <div
               className="MuiFormControl-root MuiTextField-root sc-bdVaJa dFnbXv"
-              styles="margin 1rem"
             >
               <WithStyles(ForwardRef(Input))>
                 <ForwardRef(Input)

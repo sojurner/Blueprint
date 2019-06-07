@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LystSearchGroupContent should match snapshot 1`] = `
+<WithStyles(ForwardRef(Grid))>
+  <LystForm
+    formProps={
+      Object {
+        "inputList": Array [
+          Object {
+            "iconDetails": Object {
+              "Icon": Object {
+                "$$typeof": Symbol(react.memo),
+                "compare": null,
+                "displayName": "SearchRoundedIcon",
+                "muiName": "SvgIcon",
+                "type": Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "render": [Function],
+                },
+              },
+              "iconName": "Search",
+              "position": "start",
+              "root": "endAdornment",
+            },
+            "inputProps": Object {
+              "label": "Search Icons",
+              "name": "search",
+              "styles": "margin: 1rem",
+              "variant": "standard",
+            },
+          },
+        ],
+        "label": "dddd",
+        "onChange": [Function],
+        "styles": "",
+      }
+    }
+  />
+  <LystList
+    listProps={
+      Object {
+        "list": Array [
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "compare": null,
+            "displayName": "SearchRoundedIcon",
+            "muiName": "SvgIcon",
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "compare": null,
+            "displayName": "SearchOutlinedIcon",
+            "muiName": "SvgIcon",
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "compare": null,
+            "displayName": "SearchTwoToneIcon",
+            "muiName": "SvgIcon",
+            "type": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "render": [Function],
+            },
+          },
+        ],
+        "styles": "",
+      }
+    }
+  />
+</WithStyles(ForwardRef(Grid))>
+`;

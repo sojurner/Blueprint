@@ -6,6 +6,7 @@ module.exports = {
     '^components$': '<rootDir>/private/jest/componentsMock.js',
     '^@atoms(.*)$': '<rootDir>/src/components/atoms$1',
     '^@molecules(.*)$': '<rootDir>/src/components/molecules$1',
+    '^@factories(.*)$': '<rootDir>/src/factories$1',
     '^@compounds(.*)$': '<rootDir>/src/components/compounds$1'
   },
   roots: ['<rootDir>/src'],
